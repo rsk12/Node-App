@@ -1,0 +1,103 @@
+<% include layout %>
+
+
+<section name="content">
+    <div class="container">
+<% if (typeof message != 'undefined' && message) { %>
+<h2><%= message %></h2>
+<% } %>
+  
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+          
+          <style> 
+          h1{ margin-top: 3vh; margin-bottom :5vh; font-family:oswald; color: #172A3A; }
+      .form-group {font-family: Oswald ;margin-top: 0px;} 
+                h2{ font-family:oswald;   }
+          </style>
+          
+<center>
+      
+      <h1 class="text-center"> MANUFCTURER SCREEN </h1> 
+      
+      
+<form class="form-horizontal" role="form" method="post" action="/users/register">
+   
+      <div class="form-group">
+            <label for="CustomerPO" class="col-sm-2 control-label">Customer PO</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="CustomerPO" name="CustomerPO" placeholder="Enter Customer PO " autocomplete="off">
+            </div>
+        </div>
+
+      <div class="form-group">
+            <label for="ContainerId" class="col-sm-2 control-label">Container Id</label>
+            <div class="col-sm-10">
+                   <input type="text" class="form-control" id="ContainerId" name="ContainerId" placeholder="Enter Container Id" autocomplete="off">
+            </div>
+       </div>
+           
+
+    <div class="form-group">
+        <label for="ContainerType" class="col-sm-2 control-label">Product</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="ContainerType" name="ContainerType" placeholder="Enter Container Type" autocomplete="off">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="TrackingId" class="col-sm-2 control-label">Tracking Id</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="TrackingId" name="TrackingId" placeholder="Tracking Id" autocomplete="off">
+        </div>
+    </div>
+      
+    <div class="form-group">
+        <label for="ShipmentId " class="col-sm-2 control-label">Shipment Id</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="ShipmentId" name="ShipmentId" placeholder="Tracking Id" autocomplete="off">
+        </div>
+    </div>
+      
+    <div class="form-group">
+        <label for="Carrier" class="col-sm-2 control-label">Carrier</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="Carrier" name="Carrier" placeholder="Carrier" autocomplete="off">
+        </div>
+    </div>
+      
+    <div class="form-group">
+        <label for="Service" class="col-sm-2 control-label">Service</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="Service" name="Service" placeholder="Service" autocomplete="off">
+        </div>
+    </div>
+      
+    <div class="form-group">
+        <label for="Container" class="col-sm-2 control-label">Tracking Id</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="Container" name="Container" placeholder="Container" autocomplete="off">
+        </div>
+    </div>
+      
+<!--
+    <div class="form-group">
+        <label for="email" class="col-sm-2 control-label">Manufacture LOT</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="password" name="password">
+        </div>
+    </div>-->
+
+    <div class="form-group">
+        <div class="col-sm-10 col-sm-offset-2">
+            <input id="submit" name="submit" type="submit" value="Register" class="btn btn-primary">
+        </div>
+    </div>
+    
+</form>
+          </center>
+    </div>
+    </section>

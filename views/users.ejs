@@ -1,0 +1,65 @@
+<% include layout %>
+
+<% if (typeof successMsg != 'undefined' && successMsg) { %>
+    <div class="alert alert-success"><%- successMsg %></div>
+    <% } else if(typeof errorMsg != 'undefined' && errorMsg) { %>
+            <div class="alert alert-danger"><%- errorMsg %></div>
+            <% } %>
+  <section name="content">
+    <div class="container">
+    <h5 class="text-center"><a href="/users/register">Make a New Entry</a></h5>
+    <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Customer PO</th>
+                        <th>Container Id</th>
+                        <th>Container Type</th>
+                        <th>Tracking Id</th>
+                        <th>Shipment Id</th>
+                        <th>Carrier</th>
+                        <th>Service</th>
+                        <th>Container</th>    
+                        <th>Date</th>
+                        <th>TagUUID</th>
+                        <th>Verification</th>
+                        
+                      </tr>
+                    </thead>
+                    <tbody>
+                                    <% 
+                                    if (typeof users != 'undefined' && users.length > 0) { 
+                                            var srNo = 0;
+                                            users.forEach( function ( user ){
+                                                    srNo = srNo + 1;
+                                                    %>
+                                    <tr>
+                                                    <th scope="row"><%= srNo %></th>
+                                            <td><%= user.CustomerPO %></td>
+                                            <td><%= user.ContainerId %></td>
+                                            <td><%= user.TrackingId %></td>
+                                            <td><%= user.ShipmentId %></td>
+                                            <td><%= user.Carrier %></td>
+                                            <td><%= user.Service %></td>
+                                            <td><%= user.Container %></td>
+                                           
+                                          
+                                            <td><%= user.date %></td>
+                                          
+                                            
+                                            
+                                            <td>
+                                                            <a href="/users/edit/<%= user._id %>" title="Edit User"><button class="btn btn-primary">Edit</button></a>
+                                                            <a href="/users/destroy/<%= user._id %>" title="Delete User"><button class="btn btn-danger">Delete</button></a>
+                                           
+                                            </td>
+                                          </tr>
+                                    <% });
+                                    }
+                                   else {  %>
+                                      <tr><td colspan="6"> No Data </td></tr>
+                                    <% } %>
+                    </tbody>
+                  </table>
+    </div>
+   </section>
